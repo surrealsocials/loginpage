@@ -4,7 +4,6 @@ import os
 from pyngrok import ngrok
 import time
 from colorthief import ColorThief
-import requests
 import shutil
 
 sitename=(input("Enter site name:\n"))
