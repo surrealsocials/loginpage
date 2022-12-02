@@ -1,0 +1,30 @@
+import os
+import requests
+
+os.system("apt install python3-pip")
+os.system("pip3 install flask")
+os.system("pip3 install colorthief")
+
+from colorthief import ColorThief
+
+logo=input("Enter logo link:\n")
+os.system("pip3 install pyngrok")'''+'\nos.system("curl '+loc+'current.py --output main.py")\n'+r'''img_data = requests.get(logo).content
+with open('logo.png', 'wb') as handler:
+    handler.write(img_data)
+
+color_thief = ColorThief('logo.png')
+# get the dominant color
+dominant_color = color_thief.get_color(quality=1)
+
+palette = color_thief.get_palette(color_count=6)[0]
+print(palette)
+
+def rgb_to_hex(rgb):
+    return '%02x%02x%02x' % rgb
+bgcolor=(rgb_to_hex(palette))
+
+with open("main.py","r") as mf:
+  md=mf.read().replace("<logo>",logo)
+  md=md.replace('<bgcolor>',bgcolor)
+with open("main.py","w") as mf:
+  mf.write(md)
