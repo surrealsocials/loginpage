@@ -5,4 +5,4 @@ python main.py
 cd <websitename>
 python host.py
 
-or static files in <websitename>/site
+or static files in loginpage/<websitename>/site
